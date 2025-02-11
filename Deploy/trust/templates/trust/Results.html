@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Terzo Gioco - Risultati
+{% endblock %}
+
+{% block content %}
+
+
+    {% if player.is_dictator == 1 %}
+    	Il computer ti ha selezionato come Partecipante A.
+        <p>
+            Tu hai scelto di inviare {{ player.sent_amount }} al partecipante B.
+            Il Partecipante B ti ha restituito {{ player.sentbackbyother }}.
+        </p>
+        <p>
+            All'inizio avevi: {{ Constants.endowment }},
+            hai scelto di mandare {{ player.sent_amount }},
+            e hai ricevuto {{ player.sentbackbyother }}
+            quindi ora hai::
+            {{ Constants.endowment }}-{{ player.sent_amount }}+{{ player.sentbackbyother }}=<strong>{{ player.payoff_if_A }}</strong>
+        </p>
+    {% else %}
+    	Il computer ti ha selezionato come Partecipante B.
+        <p>
+            Il partecipante A ti ha mandato {{ player.sentbyother }}.
+            che sono stati triplicati e quindi sono diventati: {{ player.tripled_amount }}.
+            TU hai scelto di restituire: {{ player.sent_back_amount }}.
+        </p>
+        <p>
+            Tu hai ricevuto: {{ player.tripled_amount }},
+            hai scelto di inviare: {{ player.sent_back_amount }}
+            quindi ora hai:
+            ({{ player.tripled_amount }})-({{ player.sent_back_amount }})=<strong>{{ player.payoff_if_B }}.</strong>
+        </p>
+        
+    {% endif %}
+
+    <p>{% next_button %}</p>
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'trust/Instructions.html' %}
+  </div>
+</div>
+{% endblock %}

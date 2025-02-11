@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+   Terzo Gioco - Prima Decisione
+{% endblock %}
+
+{% block content %}
+
+
+    
+    <p>Ora devi decidere come <span style="color:red;font-weight:bold">giocatore A</span>. </p>
+    
+    <p><strong>ATTENZIONE</strong>: <u>se il computer ti seleziona a caso come <span style="color:red;font-weight:bold">giocatore A</span></u>, questa decisione avrà effetto sul numero di biglietti del cinema che puoi vincere.</p>
+    
+    <p>Se tu vieni selezionato come <span style="color:red;font-weight:bold">giocatore A</span>, ricevi <strong>{{Constants.endowment}}</strong>. Quanto vuoi inviare al <span style="color:blue;font-weight:bold">giocatore B</span>?
+    </p>
+
+    {% formfield player.sent_amount with label="Quanti gettoni vuoi inviare al giocatore B (tra 0 e 100):" %}
+    <p>
+    {% next_button %}
+    </p>
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'trust/Instructions.html' %}
+  </div>
+</div>
+
+{% endblock %}

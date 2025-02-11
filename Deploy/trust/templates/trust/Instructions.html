@@ -1,0 +1,76 @@
+{% load otree_tags staticfiles %}
+{% load staticfiles %}
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Istruzioni
+    </h3>
+
+<p>Come nel gioco precedente, tu e l'altro membro del tuo gruppo
+dovete prendere una <strong>decisione sulla distribuzione di gettoni </strong> tra te e l’altro membro del tuo gruppo. </p>
+
+<p>In questa parte dello studio ci sono 2 giocatori: il <span style="color:red;font-weight:bold">giocatore A</span> e il <span style="color:blue;font-weight:bold">giocatore B</span>. </p>
+Quando entrambi avrete effettuato le vostre scelte, 
+il computer estrarrà a uno di voi due come <span style="color:red;font-weight:bold">giocatore A</span>. L'altro partecipante sarà automaticamente il <span style="color:blue;font-weight:bold">giocatore B</span>.</p>
+
+
+ <p>Ecco le regole di questo gioco: </p>
+
+<ul>
+  <li> Il <span style="color:red;font-weight:bold">giocatore A</span> riceve 100 gettoni, mentre il <span style="color:blue;font-weight:bold">giocatore B</span> non riceve nulla. </li>
+  <li> Il <span style="color:red;font-weight:bold">giocatore A</span> deve decidere quanti gettoni tenere per se, e quanti gettoni inviare al <span style="color:blue;font-weight:bold">giocatore B</span>. </li>
+  <li> I gettoni inviati dal <span style="color:red;font-weight:bold">giocatore A</span> al  <span style="color:blue;font-weight:bold">giocatore B</span> vengono consegnati al <span style="color:blue;font-weight:bold">giocatore B</span> e poi moltiplicati per {{ Constants.multiplication_factor }}. </li>
+  <li> Il <span style="color:blue;font-weight:bold">giocatore B</span> deve decidere quanti dei gettoni ricevuti inviare al <span style="color:red;font-weight:bold">giocatore A</span>. </li>
+  </ul>
+
+<p></p>
+
+<h3>FACCIAMO UN ESEMPIO: </h3>
+
+<p></p>
+
+<p> Immaginiamo che il computer ti abbia estratto come <span style="color:red;font-weight:bold">giocatore A</span>. </p>
+
+<p> In questo caso ricevi 100 gettoni. 
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-6">
+		<img src="{% static "trust/Trust1.jpg" %}" class="img-responsive"/>
+		<br />
+    </div>
+  </div>
+</div>	
+
+Se decidi di inviare all'altro giocatore 30 gettoni, egli ne riceverà 90 (3 volte 30), a te rimarranno 70 gettoni. </p>
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-6">
+		<img src="{% static "trust/Trust2.jpg" %}" class="img-responsive"/>
+		<br />
+    </div>
+  </div>
+</div>	
+
+
+
+Se il l'altro giocatore decide di re-inviarti 50 gettoni, alla fine del gioco tu otterrai 70+50 gettoni=120 gettoni.  </p>
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-6">
+		<img src="{% static "trust/Trust3.jpg" %}" class="img-responsive"/>
+		<br />
+    </div>
+  </div>
+</div>	
+
+<h3>FACCIAMO UN ALTRO ESEMPIO: </h3>
+<p>Immaginiamo che il computer ti abbia estratto come <span style="color:blue;font-weight:bold">giocatore B</span>. In questo caso non ricevi nulla. 
+<p> Se l'altro giocatore decide di inviarti 40 gettoni, tu ne riceverai 120 (3 volte 40), a lui rimarranno 60 gettoni.</p>
+<p> Se tu decidi di inviare all'altro giocatore 20 gettoni, alla fine del gioco tu otterrai 120-20 gettoni=100 gettoni. </p>
+<p> L'altro giocatore otterrà invece 100-40+20=80 gettoni.</p>
+
+
+<p> Come nella precedente fase dello studio tu devi prendere sia la decisione del <span style="color:red;font-weight:bold">giocatore A</span> che quella del <span style="color:blue;font-weight:bold">giocatore B</span>. </p>
+Il computer deciderà poi casualmente se tu sei il <span style="color:red;font-weight:bold">giocatore A</span> oppure il <span style="color:blue;font-weight:bold">giocatore B</span>.
+
+</div>

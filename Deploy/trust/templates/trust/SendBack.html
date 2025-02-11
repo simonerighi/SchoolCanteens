@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Terzo Gioco - Seconda Decisione
+{% endblock %}
+
+{% block content %}
+
+    <p>Ora devi decidere come <span style="color:blue;font-weight:bold">giocatore B</span>. </p>
+    
+    <p><strong>ATTENZIONE</strong>: <u>se il computer ti seleziona a caso come <span style="color:blue;font-weight:bold">giocatore B</span></u>, questa decisione avrà effetto sul numero di biglietti del cinema che puoi vincere.</p>
+    
+    <p>Se tu vieni selezionato come <span style="color:blue;font-weight:bold">giocatore B</span>.
+    Il <span style="color:red;font-weight:bold">giocatore A</span> ti ha inviato <strong>{{player.sentbyother}}</strong> e tu ricevi quindi: <strong>{{player.tripled_amount}}</strong> (3 volte <strong>{{player.sentbyother}}</strong>).
+    Ora hai <strong>{{player.tripled_amount}}</strong>.
+    Quanto vuoi inviare al <span style="color:red;font-weight:bold">giocatore A</span>? </p>
+
+
+    {% formfield player.sent_back_amount with label=prompt %}
+    <p>{% next_button %}</p>
+    
+ <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'trust/Instructions.html' %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Terzo Gioco - Istruzioni
+{% endblock %}
+
+{% block content %}
+
+    {% include Constants.instructions_template %}
+    
+    		  <p> E' tutto chiaro? </p>
+		  <p> Ci sono domande?</p>
+ <p>Le istruzioni resteranno disponibili per tutta la durata di questo gioco cliccando sul bottone "Clicca Per Rileggere le istruzioni"</p>
+  <p> Per aiutarti a verificare di aver compreso correttamente le regole del gioco, nella prossima
+  pagina di chiediamo di rispondere ad alcune domande che NON AVRANNO EFFETTO sul numero di gettoni che puoi vincere. </p>
+
+    {% next_button %}
+
+{% endblock %}

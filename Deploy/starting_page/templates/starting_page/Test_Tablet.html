@@ -1,0 +1,72 @@
+{% extends "global/Base.html" %}  {% load staticfiles otree_tags %}
+
+
+{% block title %} Utilizzo di Tablet e computer {% endblock %}
+
+{% block content %}
+
+<p>
+Questa pagina ha il solo scopo di aiutarti a comprendere come funziona il dispositivo che stai utilizzando.
+</p>
+
+<p>
+Per utilizzare il <span style="color:red;font-weight:bold">tablet</span> o <span style="color:blue;font-weight:bold"> computer</span> per partecipare ai giochi di oggi bastano poche cose:
+</p>
+
+<p><h2> 1- SCORRERE LA PAGINA </h2></p>
+<p>
+Se usi un  <span style="color:blue;font-weight:bold"> computer</span>, usa la <span style="color:blue;font-weight:bold"> rotella del mouse</span> (oppure la barra a destra).
+</p>
+
+<p>
+Se usi un <span style="color:red;font-weight:bold"> tablet</span>, scorri due dita sullo <span style="color:red;font-weight:bold"> schermo</span>.
+</p>
+
+Fa' una prova e scorri questo testo inventato fino in fondo e procedi sotto:
+</p>
+
+<p>
+
+</p>
+
+{% include 'starting_page/Lorem.html' %}
+
+
+<p><h2> 2- DIGITARE UN NUMERO </h2></p>
+
+<p>Se usi un <span style="color:blue;font-weight:bold"> computer</span>, usa il <span style="color:blue;font-weight:bold"> tasto numerico</span>. </p>
+
+<p>Se usi un <span style="color:red;font-weight:bold"> tablet</span>, digita il numero sullo <span style="color:red;font-weight:bold"> schermo</span>. </p>
+
+
+Ora clicca nella finestra sotto alla domanda seguente e rispondi:
+
+ 
+{% formfield player.test_q with label="Quale numero segue il 41?"%}
+
+<p><h2> 3- SCEGLIERE UNA RISPOSTA </h2></p>
+
+I giochi ti proporranno delle scelte. Per ogni attività puoi scegliere UNA sola risposta. 
+Familiarizza con l'esempio qui sotto:
+
+{% formfield player.test_radio with label="Ti trovi di fronte ad un <span style=”background color: #FFCCFF”> computer</span>,  ad un tablet o ad un telefono?"%}
+
+<p>
+Infine, lo studio è costituito di una serie di pagine in successione. </p>
+<p>Puoi modificare le tue risposte quante volte vuoi, e una volta terminata la tua scelta per quella pagina devi cliccare sul bottone "Successivo" per continuare.
+</p>
+<p>
+<strong>Una volta cliccato su "successivo" non è in alcun modo possibile tornare indietro e cambiare le proprie scelte. <strong>
+</p>
+
+
+Quando sei pronto e ti senti sicuro nell'utilizzo di questo dispositivo, clicca su "Successivo" per cominciare lo studio vero e proprio.
+
+
+
+
+
+{% next_button %}
+
+
+{% endblock %}

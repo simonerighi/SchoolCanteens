@@ -1,0 +1,28 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Terzo Gioco - DECISIONE COME GIOCATORE B
+{% endblock %}
+
+{% block content %}
+
+<h1>NELLA PROSSIMA PAGINA </br> DECIDI COME <span style="color:blue;font-weight:bold"> GIOCATORE B </span></h1>
+
+    
+    Quando sei pronto clicca su <strong>Successivo</strong>.
+
+    {% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'trust/Instructions.html' %}
+  </div>
+</div>
+
+    
+
+{% endblock %}

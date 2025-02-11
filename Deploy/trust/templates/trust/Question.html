@@ -1,0 +1,52 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Terzo Gioco - Domande di comprensione 
+{% endblock %}
+
+{% block content %}
+
+    {% if num_q == 1 %}
+  	<p> 
+  	
+  	Queste domande servono a verificare che tu abbia compreso le regole del gioco.	</p> 
+  	
+  	<p>Le risposte a queste domande NON AVRANNO EFFETTO sul numero di gettoni che puoi vincere</p>
+  	
+  			<p>  Immagina che il computer ti abbia selezionato come <span style="color:red;font-weight:bold">giocatore A</span>. Immagina di aver inviato 50 gettoni e che il <span style="color:blue;font-weight:bold">giocatore B</span> ti abbia restituito 40 gettoni:
+  		
+  		 
+  		  </p>
+
+
+		<p>
+		{% formfield player.question_A with label='Quanti gettoni ottieni alla fine del gioco?' %}
+		</p>
+		
+	
+		<p>
+		{% formfield player.question_B with label='Quanti gettoni ottiene il giocatore B?' %}
+		</p>
+	
+				
+	</p>
+  
+    {% endif %}
+    
+    Quando hai effettuato le tue scelte clicca su <strong>Successivo</strong>.
+
+    {% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'trust/Instructions.html' %}
+  </div>
+</div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Terzo Gioco - Soluzione della domande di comprensione
+{% endblock %}
+
+{% block content %}
+
+ Immagina che il computer ti abbia selezionato come <span style="color:red;font-weight:bold"> giocatore A </span>. I
+ mmagina di aver inviato 50 gettoni e che il <span style="color:blue;font-weight:bold"> giocatore B </span> ti abbia restituito 40 gettoni:
+  		 Immagina il computer ti abbia selezionato come <span style="color:red;font-weight:bold"> giocatore A </span>. 
+
+
+    {% if player.question_A_correct %}
+        <p class="text-success">
+            La tua risposta <strong>alla domanda 'Quanti gettoni ottieni alla fine del gioco?'. E' {{player.question_A}}'</strong>
+            Questa risposta era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong> alla domanda 'Quanti gettoni ottieni alla fine del gioco?'. E' {{player.question_A}}'</strong>
+            Questa risposta era sbagliata.
+        </p>
+    {% endif %}
+
+    <p>
+        <p>  <strong>  Spiegazione soluzione prima domanda:  </strong></p>
+         <p> Il computer ti ha selezionato come <span style="color:red;font-weight:bold"> giocatore A </span>. Quindi tu avevi a disposizione 100 gettoni inizialmente.  </p> 
+         <p> Hai deciso di darne 50 al <span style="color:blue;font-weight:bold"> giocatore B </span>, mentre lui ha deciso di inviartene indietro 40.  </p> 
+         <p> Alla fine del gioco tu ottieni dunque 100-50+40=90 gettoni.  </p> 
+         <p> La risposta esatta alla prima domanda era quindi 90.</p>
+        
+         </p>   
+        
+    
+    {% if player.question_B_correct %}
+        <p class="text-success">
+            La tua risposta <strong> alla domanda 'Quanti gettoni ottiene il giocatore B ?  {{player.question_B}}'</strong>
+            era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong> alla domanda 'Quanti gettoni ottiene il  giocatore B ? {{player.question_B}}'</strong>
+            era sbagliata.
+        </p>
+    {% endif %}
+
+        
+        <p>   <strong> Spiegazione soluzione seconda domanda:  </strong>
+           </p> 
+           <p> Il <span style="color:blue;font-weight:bold"> giocatore B </span> comincia il gioco con 0 gettoni. </p> 
+           <p> Tu hai deciso di inviargliene 50, quindi lui ne riceve 50x3=150. </p> 
+           <p> Il partecipante B ha deciso di restituire al <span style="color:red;font-weight:bold"> giocatore A </span> 40 gettoni. </p> 
+           <p> Quindi alla fine del gioco il  <span style="color:blue;font-weight:bold"> giocatore B </span> rimane con 0+150-40=110 gettoni. </p> 
+           <p> La risposta esatta è quindi 110.</p>
+           
+
+
+    </p>
+
+  
+
+
+<br/>
+<br/>  
+<br/>        
+           
+           
+  <p>Hai completato le domande di comprensione, adesso possiamo iniziare il test vero e proprio che <strong>avrà effetto sul numero di biglietti del cinema che potrai vincere</strong>.         
+ </p>
+
+     
+     <p> Quando sei pronto per iniziare puoi cliccare sul bottone <strong>'Successivo'</strong> qui sotto.    </p>
+    {% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'trust/Instructions.html' %}
+  </div>
+</div>
+
+{% endblock %}

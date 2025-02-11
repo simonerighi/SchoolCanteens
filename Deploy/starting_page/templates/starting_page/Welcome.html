@@ -1,0 +1,84 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Benvenuto!
+{% endblock %}
+
+{% block content %}
+
+<h2>Regole di partecipazione</h2>
+
+<p> Benvenuto! </p>
+
+<p>Ti proporremo dei <strong>giochi </strong>, parte di una ricerca scientifica dell'Università di Bologna.</p>
+
+<p> I giochi ti daranno la possibilità di vincere: </p>
+
+
+<center><h1>Biglietti del cinema</h1> (di Modena)</center>.
+
+<p> oltre ad una <font size="6">penna</font> dell'Università di Bologna, 
+che riceverai come ringraziamento per la tua partecipazione in tutti i casi.</p> 
+
+<span style="font-weight:bold"> Come sono assegnati i biglietti del cinema? </span>
+<p>Attraverso ciascuno dei giochi potrai guadagnare dei <span style="color:red;font-weight:bold">gettoni </span>. Alla fine dei quattro giochi più alto sarà il numero di gettoni che hai guadagnato, più alto sarà il numero di biglietti che potrai vincere.</p>
+
+<p> La somma dei gettoni ottenuti nei quattro giochi formerà il tuo punteggio finale. </p>
+
+<p>  Tu e i tuoi compagni sarete classificati in base al punteggio finale. 
+La tua posizione nella classifica della classe determinerà il numero di biglietti che vincerai, 
+secondo la seguente regola: </p>
+
+<ul>
+<li> I ragazzi nelle posizioni dalla prima alla {{ player.first_third_end }} otterranno 2 biglietti del cinema </li>
+<li> I ragazzi nelle posizioni dalla  {{ player.second_third_start }} alla {{ player.second_third_end }} otterranno 1 biglietto del cinema.</li>
+<li> I ragazzi oltre la posizione  {{ player.second_third_end }} non otterranno nessun biglietto.</li>
+</ul>
+
+<p> Tutti otterranno il premio di partecipazione: una penna dell'università di Bologna.</p>
+
+<p> <strong>SOLO TU SAPRAI LA TUA POSIZIONE IN CLASSIFICA ALLA FINE DEI 4 GIOCHI </strong>  e i
+ biglietti saranno consegnati ai vincitori senza farlo sapere agli altri. </p>
+
+<p>Prima di cominciare, alcune regole importanti: </p>
+
+<ul style="font-size:20px">
+<li> non puoi parlare con i tuoi compagni fino alla fine della ricerca. </li>
+<li> se hai qualche domanda o qualche problema, alza la mano, verremo a risponderti. </li>
+<li> spegnere e non usare il cellulare  </li>
+<li> non aprire pagine internet </li>
+<li> ascoltare e leggere attentamente le istruzioni! </li>
+</ul>
+
+<p>Nei casi nei quali non saranno rispettate queste regole vi chiederemo di lasciare l'aula.<p>
+
+<p><strong><h1>Ora iniziamo. </h1></strong></p>
+
+
+<p> Lo studio si compone di <span style="font-weight:bold">4 giochi</span>,  </p>
+
+<p> Ogni gioco ha le proprie regole e si costituisce di tre fasi:
+<ul style="font-size:20px">
+<li> <strong>Lettura delle istruzioni</strong>: ogni gioco ha le sue regole, che ti verranno spiegate chiaramente. Segui attentamente le istruzioni che leggeremo. Un copia delle istruzioni è disponibile sullo schermo. </li>
+<li> <strong>Domande di esempio </strong>: prova a rispondere alle <span style="font-weight:bold">domande di esempio</span> per vedere se hai capito. Le domande di esempio non servono a vincere biglietti del cinema, ma aiutano a capire le regole. </li>
+<li> <strong>Prendi la decisione</strong>. Le tue decisioni e quelle di altri membri del tuo gruppo determineranno il numero di gettoni che tu e gli altri otterrete.  Le istruzioni rimarranno sempre disponibili, cliccando sul pulsante "Clicca per Rileggere le Istruzioni".  </li>
+</ul>
+
+<p>Tu conoscerai il tuo risultato in ciascuno dei giochi soltanto alla fine dello studio.</p>
+
+<p>In ogni gioco giocherai con alcuni dei tuoi compagni <span style="font-weight:bold">scelti a caso dal computer</span>. Per ogni gioco i compagni saranno <span style="font-weight:bold">diversi</span>. </p>
+
+<p>Nessuno saprà con chi sta giocando:
+
+ <center> Tu non saprai con chi stai giocando </br> e loro non sapranno di te.  </center></p>
+
+
+<p> E’ tutto chiaro? Avete domande? </p>
+
+<p> Quando sei pronto per cominciare clicca su <strong>“Successivo”</strong>.  </p>
+
+
+    {% next_button %}
+
+{% endblock %}
