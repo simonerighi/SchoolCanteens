@@ -1,0 +1,43 @@
+{% extends "global/Base.html" %}  {% load staticfiles otree_tags %}
+
+
+{% block title %}Primo Gioco - Prima Decisione {% endblock %}
+
+{% block content %}
+
+
+<p>
+  		Tu puoi scegliere ora di:<br>
+  		<ol>
+ 		<li>partecipare a questa parte del gioco (Prima decisione) </li>
+		 <li>non partecipare e ottenere {{ Constants.endowement }} indipendentemente da ciò che decidono gli altri.</li>
+</ol>
+		
+		
+  
+</p>
+
+{% formfield player.participation with label="Vuoi Partecipare?"%}
+
+Clicca su <strong>'Successivo'</strong> quando hai effettuato la tua scelta.
+
+
+&nbsp&nbsp
+
+
+{% next_button %}
+
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	  {% include "PGG_Simple/Instructions_opt.html" %}
+  </div>
+</div> 
+   
+
+
+
+{% endblock %}

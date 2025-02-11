@@ -1,0 +1,40 @@
+{% extends "global/Base.html" %} {% load staticfiles otree_tags %} 
+
+{% block title %} Risultati  {% endblock %} 
+
+{% block content %} 
+
+<strong>Prima Decisione.</strong>
+ <p>
+{% if player.participation == 'Si' %}
+    <p>
+		Lei ha iniziato questa parte dello studio con una dotazione di  {{ Constants.endowement }}
+		ed ha deciso di partecipare.
+		Lei ha messo nel progetto comune {{ player.contribution_opt }}. Il suo gruppo ha messo {{ group.total_contribution_opt }},
+		il compenso individuale per la partecipazione al progetto è risultato {{group.individual_share_opt }}. 
+    </p>
+    {% else %}
+    <p>
+		Lei ha iniziato questa parte dello studio con una dotazione di {{ Constants.endowement }} 
+		ed ha deciso di non partecipare.
+    </p>
+
+{% endif %}
+
+ <p> Quindi, il suo compenso per la prima decisione è {{player.payoff_opt}} </p>
+ </p>
+ 
+ <strong>Seconda Decisione.</strong>
+ <p>
+Per quanto riguarda la seconda decisione,Lei ha iniziato questa parte dello studio con una dotazione di  {{ Constants.endowement }}.
+Lei ha deciso di contribuire {{ player.contribution_bl }}. 
+Il suo gruppo ha contribuito un totale di {{group.total_contribution_bl }},
+da cui consegue un compenso individuale di partecipazione di {{group.individual_share_bl }}. 
+</p>
+ <p> Il compenso da lei ottenuto per la seconda decisione é dunque: {{player.payoff_bl }} </p>
+ 
+  
+
+{% next_button %} 
+
+{% endblock %} 

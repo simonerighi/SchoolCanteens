@@ -1,0 +1,16 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block title %}
+   Primo Gioco - Seconda Decisione
+{% endblock %}
+
+{% block content %}
+
+    {% include 'PGG_Simple/reshuffle_new.html' %}
+
+
+    {% next_button %}
+
+{% endblock %}

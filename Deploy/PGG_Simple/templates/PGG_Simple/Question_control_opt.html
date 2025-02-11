@@ -1,0 +1,67 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Domande di comprensione {{ num_q }} di {{ total_q }}
+{% endblock %}
+
+{% block content %}
+
+    {% if num_q == 1 %}
+  
+   	<p> 
+  		 Immagina che gli altri partecipanti del tuo gruppo abbiano 
+  		 messo nel progetto comune 20, 50 e 100 gettoni. </p>
+
+
+		<p> 		Tu hai messo nel progetto 10 gettoni. </p>
+		  	<p>  Il totale dei gettoni messi nel progetto comune è 180.  </p>
+		 
+		<p> 	 
+		Il valore totale del progetto comune, dopo che tutti hanno contribuito è:
+		A	10+20+50+100=180
+		B	10+20+50+100=180x2=360
+		 </p>
+	
+		<p> Il compenso individuale ottenuto dal SOLO progetto comune, dopo che tutti hanno contribuito è:
+		A	180:4=45
+		B	360:4=90
+		C	360:4=90 + gettoni nel conto personale non messi nel progetto 
+		
+		 </p>
+		<p> Il tuo compenso individuale è:
+		A	180:4=45
+		B	360:4=90
+		C	360:4=90 + gettoni nel conto personale non messi nel progetto pari a 90 (= 100 iniziali - 10 messi da Lei nel progetto comune). Totale 180.	
+		   </p>
+		<p> Il compenso degli altri partecipanti è:
+		A	20, 50, 100
+		B	20+90,50+90,100+90
+		C 	80+90, 50+90,0+90
+		  
+		   </p>
+   		 
+   		 
+        <p>
+            {% formfield player.training_question_1_win_pick with label='Il vincitore ha scelto:' %}
+        </p>
+        <p>
+            {% formfield player.training_question_1_my_payoff with label='Il Suo guadagno è:' %}
+        </p>
+    {% endif %}
+
+    {% next_button %}
+
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'PGG_Simple/Instructions_opt.html' %}
+  </div>
+</div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Primo Gioco - Un commento sulla tua scelta
+{% endblock %}
+
+{% block content %}
+
+<p>Ora ti chiediamo per favore di scrivere sul foglio che hai sul tavolo, un commento sulla scelta che hai effettuato in questa parte 
+dello studio.</p>
+
+<p> Hai seguito qualche regola per decidere quanto contribuire?</p>
+
+Clicca su <strong> 'Successivo' </strong> quando sei pronto per proseguire.
+
+{% next_button %}
+
+{% endblock %}

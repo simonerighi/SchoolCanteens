@@ -1,0 +1,50 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Primo Gioco - Domande di comprensione 
+{% endblock %}
+
+{% block content %}
+
+    {% if num_q == 1 %}
+  	<p> 
+  		 Immagina che gli altri partecipanti del tuo gruppo abbiano 
+  		 messo rispettivamente nel progetto comune 0, 20 e 30 gettoni, mentre 
+  		 tu hai deciso di mettere 10 gettoni. </p>
+
+
+		<p>
+		{% formfield player.value_project_test with label='Il valore totale del progetto comune, dopo che tutti hanno deciso quanto mettere e la somma è stata moltiplicata per due è:' %}
+		</p>
+		
+	
+		<p>
+		{% formfield player.individual_part_test with label='Il tuo guadagno individuale ottenuto dal SOLO progetto comune, dopo che tutti hanno contribuito è:' %}
+		</p>
+	
+		
+		<p>
+		{% formfield player.individual_gain with label='Il tuo guadagno individuale finale è:' %}
+		</p>
+		
+	</p>
+  
+    {% endif %}
+    
+    Quando hai effettuato le tue scelte clicca su <strong>Successivo</strong>.
+
+    {% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'PGG_Simple/Instructions_all.html' %}
+  </div>
+</div>
+
+    
+
+{% endblock %}

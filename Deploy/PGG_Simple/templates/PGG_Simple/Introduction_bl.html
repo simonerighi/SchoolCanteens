@@ -1,0 +1,20 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Primo Gioco - Seconda Decisione
+{% endblock %}
+
+{% block content %}
+
+    {% include 'PGG_Simple/Instructions_bl.html' %}
+
+      
+		<p> E' tutto chiaro ? Ci sono domande?</p>
+				<p> Quando sei pronto per effettuare la scelta clicca sul bottone <strong>'Successivo'</strong>.
+
+				</p>
+
+    {% next_button %}
+
+{% endblock %}

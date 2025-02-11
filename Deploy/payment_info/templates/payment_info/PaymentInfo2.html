@@ -1,0 +1,52 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    I tuoi risultati
+{% endblock %}
+
+{% block content %}
+
+
+
+<p>
+Hai quindi guadagnato un totale di: {{ player.total_payoff_ego }}
+</p>
+
+<p>Grazie ai punti che hai realizzato, sei risultato nella posizione {{ player.rankpos }} nella tua classe di {{ player.numpart }} studenti. </p>
+
+<p> Questo ti permette di guadagnare: <strong> {{ player.payoffnum }} biglietti del cinema, oltre che il premio di partecipazione: una penna dell'Università di bologna. </strong></p>
+
+    
+  
+<div class="panel panel-default" style="margin-bottom:10px">
+    <div class="panel-body">
+         <p><strong>UNA NOTA IMPORTANTE:</strong></p>
+       <p>In questo studio non ci sono scelte giuste o sbagliate. Ottenere meno o più gettoni degli altri NON significa
+        in nessun modo essere più o meno intelligenti, bravi o fortunati. 
+        Come nel mondo reale, il risultato finale che hai ottenuto dipende non solo dalle tue scelte, ma anche da quelle degli altri!
+        </p>
+            
+        </div>
+    </div>  
+    
+<div class="panel panel-default" style="margin-bottom:10px">
+    <div class="panel-body">
+         <p><strong>Sei giunto alla fine dell'esperimento:</strong></p>
+       <p>Ti preghiamo di rimanere seduto finché non sarà chiamato il tuo numero,
+        il numero di biglietti vinto ti sarà consegnato in privato. 
+        NON sei in nessun modo obbligato a rivelare ai tuoi compagni il numero di biglietti che hai vinto. </p>
+            
+        </div>
+    </div>
+    
+
+ {% next_button %}
+ 
+{% endblock %}
+
+{% block form %}
+{% endblock %}
+
+
+{{ rankpos }}

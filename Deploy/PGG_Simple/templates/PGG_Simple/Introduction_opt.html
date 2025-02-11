@@ -1,0 +1,52 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block title %}
+  Primo Gioco - Prima Decisione
+{% endblock %}
+
+{% block content %}
+
+
+  
+		<p>Come prima indicato, hai a disposizione 40 gettoni. Devi scegliere quanti di questi gettoni tenere nel tuo conto privato e quanti metterne in un
+		progetto comune. I gettoni che non metti nel progetto comune, restano nel tuo conto privato.
+		I gettoni che tutti mettono nel progetto comune, raddoppiano e poi vengono divisi equamente tra i 
+		quattro membri del gruppo, indipendentemente dal numero di gettoni messi da ognuno, tu incluso.
+		</p>
+		
+			&nbsp&nbsp
+	
+				&nbsp&nbsp
+			<p><strong>
+		Puoi scegliere di mettere nel progetto comune uno dei seguenti valori: 0, 10, 20, 30, 40
+		</strong>.
+		
+		 </p>
+		
+				&nbsp&nbsp
+		
+		
+
+	<p>Clicca sul bottone <strong>'Successivo'</strong> per continuare.
+ 		 </p>
+	
+   {% next_button %}
+   
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	 {% include 'PGG_Simple/Instructions_all.html' %}
+  </div>
+</div>   
+   
+
+ 
+
+
+ 
+
+{% endblock %}

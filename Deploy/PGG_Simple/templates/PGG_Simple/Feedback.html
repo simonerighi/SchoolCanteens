@@ -1,0 +1,92 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Primo Giocoe - Soluzione della domande di comprensione
+{% endblock %}
+
+{% block content %}
+
+
+    {% if player.is_value_project_test_correct %}
+        <p class="text-success">
+            La tua risposta <strong>'Il valore totale del progetto comune, dopo che tutti hanno deciso quanto mettere e la somma è stata moltiplicata per due è: {{player.value_project_test}}'</strong>
+            era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong>'Il valore totale del progetto comune, dopo che tutti hanno deciso quanto mettere e la somma è stata moltiplicata per due è: {{player.value_project_test}}'</strong>
+            era sbagliata.
+        </p>
+    {% endif %}
+    
+      <p><p>  <strong>  Spiegazione soluzione prima domanda:  </strong></p>
+        <p>il guadagno ottenuto dal progetto comune è pari a 120. Infatti la somma dei gettoni messi dai quattro componenti del gruppo è pari a 60 ma visto che i gettoni messi nel progetto comune raddoppiano di valore, questi 60 diventano 60 x 2 = 120.
+        La risposta esatta alla prima domanda era quindi 120.</p></p>
+
+    
+    {% if player.is_individual_part_test_correct %}
+        <p class="text-success">
+            La tua risposta <strong>'Il tuo guadagno individuale ottenuto dal SOLO progetto comune, dopo che tutti hanno contribuito è: {{player.individual_part_test}}'</strong>
+            era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong>'Il tuo guadagno individuale ottenuto dal SOLO progetto comune, dopo che tutti hanno contribuito è: {{player.individual_part_test}}'</strong>
+            era sbagliata.
+        </p>
+    {% endif %}
+    
+           <p> <p>   <strong> Spiegazione soluzione seconda domanda:  </strong>
+           </p> <p>Il valore del progetto comune è 120. Visto che i gettoni del progetto comune
+           dopo essere stati raddoppiati, vengono divisi equamente tra i 4 componenti del gruppo, allora i 120 gettoni del progetto comune, divisi per 4 danno 
+           30 gettoni ognuno. La risposta esatta era quindi 30.</p><p>
+
+    {% if player.is_individual_gain_correct %}
+        <p class="text-success">
+            La tua risposta <strong>'Il Suo guadagno individuale finale è: {{player.individual_gain}}'</strong>
+            era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong>'Il Suo guadagno individuale è: {{player.individual_gain}}'</strong>
+            era sbagliata.
+        </p>
+    {% endif %}
+
+  <p> <p>   <strong> Spiegazione soluzione terza domanda:  </strong>
+           </p><p> I gettoni che ogni componente del gruppo ottiene dal progetto comune
+           sono 30. 
+           Tu hai deciso di mettere, in questo esempio, 10 gettoni. 
+           Quindi, restavano nel tuo conto privato 30 gettoni che sommati 
+           al compenso del progetto comune fanno 30 + 30 = 60. 
+           La risposta esatta era quindi 60 gettoni.</p> 
+
+    </p>
+
+  
+</br>
+</br>          
+</br>                  
+       
+           
+  <p>Hai completato le domande di comprensione, adesso possiamo iniziare il gioco vero e proprio, 
+  <strong>Che avrà effetto sul tuo compenso finale</strong>.
+            
+ </p>
+
+     
+     <p> Quando sei pronto per iniziare puoi cliccare sul bottone <strong>'Successivo'</strong> qui sotto.    </p>
+    {% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'PGG_Simple/Instructions_all.html' %}
+  </div>
+</div>
+
+
+{% endblock %}

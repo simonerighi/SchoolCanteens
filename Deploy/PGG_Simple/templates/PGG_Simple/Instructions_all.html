@@ -1,0 +1,190 @@
+
+<style type="text/css">
+    ul {
+        list-style-type:circle;
+        padding-left:20px;
+    }
+    h3.panel-sub-heading {
+        padding-bottom:10px;
+        padding-left:4px;
+    }
+
+    td, th{
+        text-align: center;
+    }
+
+    .rotate90 {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 60%;
+    }
+
+    .instructions {
+        position: relative;
+        text-shadow: 0 1px 0 #fff;
+        line-height: 1.5;
+        margin: 60px auto;
+        background-color: #f5f5dc;
+        background-image: linear-gradient(to bottom, #f5f5dc 0px, #fbfbeb 100%);
+        padding-top: 5px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .instructions:before, .instructions:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width:300px;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+        transform: rotate(-3deg);
+    }
+
+    .instructions:after {
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+</style>
+{% load staticfiles %}
+<div class="instructions well well-lg" style="">
+
+
+    <h4 class="panel-sub-heading">
+Istruzioni
+    </h4>
+
+<p> Ognuno dei quattro membri del tuo gruppo ha  <span style="color:blue;font-weight:bold">40 gettoni in un suo conto privato</span>. </p>
+<p> Devi decidere quanti gettoni <span style="color:blue;font-weight:bold">tenere nel tuo conto privato</span> e quanti <span style="color:red;font-weight:bold">metterne in 
+un progetto comune</span> con gli altri membri del tuo gruppo. </p>
+
+<p>I gettoni che vincerai sono dati dalla <strong>somma</strong> dei gettoni che hai deciso di tenere nel tuo <span style="color:blue;font-weight:bold">conto privato</span> e dei gettoni che <span style="color:red;font-weight:bold">ottieni dal progetto comune</span>. </p>
+
+<p>Puoi scegliere di mettere nel <span style="color:red;font-weight:bold">progetto comune</span> uno dei seguenti valori: 0, 10, 20, 30, oppure 40. </p>
+
+<div class="container-fluid">
+  <div class="row" >
+    <div class="col-sm-6">
+      <img src="{% static "PGG_Simple/PGG.png" %}" class="img-responsive"/> 
+		<br />
+      </div> 
+   </div>
+</div>
+
+
+<p> I gettoni che non metti nel progetto comune <span style="color:blue;font-weight:bold">restano nel tuo conto privato</span>. 
+Ogni gettone che tieni per te rimane tuo alla fine del gioco. </p>
+
+<p>  Per quanto riguarda i gettoni che <span style="color:red;font-weight:bold">metti nel progetto comune</span> essi:
+<ol>
+<li>Vengono <strong>sommati</strong> ai gettoni messi dagli altri membri del tuo gruppo nel progetto comune</li>
+<li>La <strong>somma viene raddoppiata</strong></li>
+<li>La somma raddoppiata viene poi <strong>divisa in quattro parti uguali</strong> da distribuire a ciascun membro del gruppo, 
+indipendentemente dal numero di gettoni che ciascuno ha messo nel progetto comune.</li>
+</ol>
+
+<p>I gettoni che vincerai saranno uguali alla <strong>somma</strong> dei:
+
+<ul>
+<li> gettoni che hai deciso di <span style="color:blue;font-weight:bold">tenere nel tuo conto privato</span> </li>
+<li>e dei <span style="color:red;font-weight:bold">gettoni che ottieni dal progetto comune</span>.</p>
+
+<p></p>
+
+<h3>FACCIAMO ALCUNI ESEMPI</h3>
+	
+
+<p></p>
+		
+		<p><strong>Esempio 1</strong>: Se tutti i componenti del tuo gruppo mettono tutti i loro <strong>40 gettoni</strong> nel <span style="color:red;font-weight:bold">progetto comune</span>, il compenso di tutti raddoppierà: 
+		tutti otterrete 80 gettoni. Questo perché se tutti i membri del tuo gruppo mettono 40 gettoni nel <span style="color:red;font-weight:bold">progetto comune</span>, 
+		il valore del progetto comune diventa
+		40 X 4 = 160 gettoni.
+	
+				<div class="container-fluid">
+  		<div class="row">
+  	  <div class="col-sm-6">
+		<img src="{% static "PGG_Simple/PGG5.png" %}" class="img-responsive"/>
+		<br />
+  	  </div>
+	  </div>
+	</div>	
+		 I 160 gettoni messi nel <span style="color:red;font-weight:bold">progetto comune</span> vengono moltiplicati per 2 e divisi
+		 equamente tra i quattro partecipanti, 320 : 4 = 80 per ognuno, tu incluso.</p>	
+		 <p>Per ottenere il tuo guadagno finale in questa parte dello studio, agli 80 gettoni ottenuti dal <span style="color:red;font-weight:bold">progetto comune</span>, vanno aggiunti gli 0 gettoni rimasti nel tuo <span style="color:blue;font-weight:bold">conto privato</span>. Il totale che ottieni è dunque <strong>80 gettoni</strong>.<p>
+	&nbsp&nbsp
+				<p></p>
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-6">
+		<img src="{% static "PGG_Simple/PGG6.png" %}" class="img-responsive"/>
+		<br />
+    </div>
+  </div>
+</div>		
+	&nbsp&nbsp
+	
+		<p><strong>Esempio 2</strong>: Se tieni per te i tuoi 40 gettoni nel <span style="color:blue;font-weight:bold">conto privato</span> e gli altri tre membri del gruppo 
+		invece mettono nel <span style="color:red;font-weight:bold">progetto comune</span> i loro 40 gettoni, il valore del progetto sarà 40 X 3 = 120, che 
+		moltiplicato per due darà il valore finale di 240. </p> 
+		
+		<p>Il valore finale del <span style="color:red;font-weight:bold">progetto 
+		comune</span> di 240 gettoni sarà diviso equamente tra i quattro componenti del gruppo.
+		Quindi 240:4 = 60 per ognuno, tu incluso. </p>	
+		
+
+				&nbsp&nbsp		
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      	<img src="{% static "PGG_Simple/PGG7.png" %}" class="img-responsive"/>
+		<br />
+    </div>
+  </div>
+</div>	
+    
+    
+ 
+<div class="container-fluid">
+  <div class="row">    
+    <div class="col-sm-6">
+		<img src="{% static "PGG_Simple/PGG8.png" %}" class="img-responsive"/>
+		<br />
+		
+    </div>
+  </div>
+</div>	
+
+		&nbsp&nbsp
+
+		
+		<p>Ai 40 gettoni che avevi tenuto nel tuo <span style="color:blue;font-weight:bold">conto privato</span> saranno aggiunti 60 gettoni dal <span style="color:red;font-weight:bold">progetto comune</span> per
+		un totale di 100 gettoni mentre gli altri componenti otterranno solamente i 60 
+		gettoni del <span style="color:red;font-weight:bold">progetto comune</span>.
+		</p>		
+			&nbsp&nbsp
+	<div class="container-fluid">
+ 	<div class="row">
+    <div class="col-sm-6">
+	<img src="{% static "PGG_Simple/PGG9.png" %}" class="img-responsive"/>
+	<br />
+	</div></div></div>	
+
+
+
+
+ 	
+
+
+</div>

@@ -1,0 +1,31 @@
+{% extends "global/Base.html" %}  {% load staticfiles otree_tags %}
+
+
+{% block title %} Primo Gioco - Decisione {% endblock %}
+
+{% block content %}
+
+<p>Ora devi decidere quanti gettoni mettere nel progetto comune.</p>
+
+<strong>ATTENZIONE: </strong> Questa decisione ha effetto sul numero di biglietti del cinema che puoi vincere.</p>
+
+
+{% formfield player.contribution_bl with label="Quanti gettoni metti nel progetto comune?"%}
+
+Clicca su <strong>'Successivo'</strong> quando hai scelto.
+
+
+{% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	  {% include "PGG_Simple/Instructions_all.html" %}
+  </div>
+</div>   
+   
+
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    I tuoi risultati
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+    <em>Grazie per aver partecipato a questo studio, ecco di seguito i tuoi risultati.</em>
+</p>
+
+<h3>
+PRIMA PARTE
+</h3>
+
+ <p>
+ 
+Hai iniziato questa parte dello studio con una dotazione di  {{ PGGSimple_endowement }}.
+Hai deciso di contribuire {{ PGGSimple_contribution_bl }}. 
+Il tuo gruppo ha contribuito un totale di {{ PGGSimple_total_contribution_bl }},
+da cui consegue un compenso individuale dal progetto comune di {{ PGGSimple_individual_share_bl }}, che si sommano ai gettoni che hai tenuto nel tuo conto privato. 
+</p>
+
+  <p>  <strong> Per questa parte hai guadagnato {{ PGGSimple_payoff_bl }} </strong>  </p>
+
+
+<h3>
+SECONDA PARTE
+</h3>
+
+        {% if Dictator_is_dictator == 1 %}
+         <p>Sei stato selezionato casualmente dal computer come giocatore A.   </p>
+         <p> Quindi cominci il gioco con 100 gettoni.
+          <p>  Hai deciso di inviare <strong>{{ Dictator_sent }}</strong> al giocatore B. </p>
+            
+            <p>Quindi tu ottieni <strong>{{ Dictator_payoff_if_A }}</strong>. </p>
+            
+        {% else %}
+        
+          <p>Sei stato selezionato casualmente dal computer come giocatore B.  </p>
+            <p> Il giocatore A ha deciso di tenere {{ Dictator_sentbyother }}, quindi tu hai ottenuto
+         <strong>{{ Dictator_payoff_if_B }}</strong>. </p>
+        {% endif %}
+        
+         <p><strong> Per questa parte hai quindi guadagnato {{ Dictator_payoff }} </strong> </p>
+
+<h3>
+TERZA PARTE
+</h3>
+
+    {% if Trust_is_dictator == 1 %}
+    	 <p>Il computer ti ha selezionato come giocatore A. </p>
+        <p>
+            Tu hai scelto di inviare {{ Trust_sent_amount }} al giocatore B.
+            Il giocatore B ti ha restituito {{ Trust_sentbackbyother }}.
+        </p>
+        <p>
+            All'inizio avevi 100 gettoni,
+            hai scelto di mandare {{ Trust_sent_amount }},
+            e hai ricevuto {{ Trust_sentbackbyother }}
+            quindi ora hai:
+            100-{{ Trust_sent_amount }}+{{ Trust_sentbackbyother }}=<strong>{{ Trust_payoff_if_A }}</strong>
+        </p>
+    {% else %}
+    	Il computer ti ha selezionato come giocatore B.
+        <p>
+            Il giocatore A ti ha mandato {{ Trust_sentbyother }}
+            che sono stati triplicati e quindi sono diventati {{ Trust_tripled_amount }}.
+            TU hai scelto di restituire: {{ Trust_sent_back_amount }}.
+        </p>
+        <p>
+          Quindi ora hai
+            0+{{ Trust_tripled_amount }}-{{ Trust_sent_back_amount }}=<strong>{{ Trust_payoff_if_B }}</strong>
+        </p>
+        
+    {% endif %}
+
+<strong> Per questa parte hai guadagnato {{ Trust_payoff }} </strong>
+
+<h3>
+IL GIOCO DELLA BOMBA
+</h3>
+
+
+<p> Nel gioco della bomba hai guadagnato {{ bomb_payoff }}. </p>
+
+
+<br/><br/>
+
+<p>
+<strong>Nel complesso, nei 4 giochi a cui hai partecipato hai guadagnato un totale di: {{ total_payoff }}</strong>
+</p> 
+
+<p>
+Clicca sul pulsante "Successivo" per conoscere la tua posizione nella classifica dei gettoni della classe e il 
+numero di biglietti del cinema che hai vinto.
+</p>
+
+
+    
+    
+    
+<h2>
+
+
+
+
+
+</h2>
+ {% next_button %}
+ 
+{% endblock %}
+
+{% block form %}
+{% endblock %}

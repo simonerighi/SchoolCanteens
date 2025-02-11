@@ -1,0 +1,32 @@
+{% extends "global/Base.html" %}  {% load staticfiles otree_tags %}
+
+
+{% block title %} Primo Gioco - Prima Decisione  {% endblock %}
+
+{% block content %}
+
+	
+
+{% formfield player.contribution_opt with label="Quanti gettoni metti nel progetto comune?"%}
+
+
+Puoi effettuare la tua scelta cliccando il bottone al lato della scelta desiderata. 
+
+Quando hai terminato, clicca su <strong>'Successivo'</strong>.
+
+
+{% next_button %}
+
+
+    
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	 {% include "PGG_Simple/Instructions_opt.html" %}
+  </div>
+</div>   
+
+
+{% endblock %}
