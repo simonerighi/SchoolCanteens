@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+{% load staticfiles %}
+
+{% block title %}Secondo Gioco  - Istruzioni{% endblock %}
+
+{% block content %}
+{% include Constants.instructions_template %}
+
+		  <p> E' tutto chiaro? </p>
+		  <p> Ci sono domande?</p>
+ <p>Le istruzioni resteranno disponibili per tutta la durata di questa parte 
+ dello studio cliccando sul bottone "Clicca Per Rileggere le istruzioni"</p>
+  <p> Per aiutarti a verificare di aver compreso correttamente le istruzioni, nella prossima
+  pagina di chiediamo di rispondere ad alcune domande che NON AVRANNO EFFETTO sul tuo 
+  compenso finale. </p>
+  
+{% next_button %}
+{% endblock %}

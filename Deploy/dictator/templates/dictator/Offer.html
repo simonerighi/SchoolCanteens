@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree_tags %}
+
+{% block title %}Secondo Gioco - La tua decisione{% endblock %}
+
+{% block content %}
+<p>
+
+<p>Ora devi decidere quanti gettoni inviare all'altro giocatore. <p>
+
+<p> <strong>ATTENZIONE </strong>:
+Questa decisione ha effetto sul numero di biglietti del cinema che puoi vincere.</p>
+
+Se tu vieni scelto come <strong>Partecipante A</strong>. Quanti gettoni vuoi inviare all'altro giocatore?
+</p>
+
+{% formfield player.sent with label="Inserisci un ammontare tra 0 e 100:" %}
+
+{% next_button %}
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'dictator/Instructions.html' %}
+  </div>
+</div>
+
+{% endblock %}

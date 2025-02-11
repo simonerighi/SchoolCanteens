@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Secondo Gioco - Risultati
+{% endblock %}
+
+{% block content %}
+    <p>
+
+        {% if player.is_dictator == 1 %}
+        Sei stato selezionato casualmente dal computer come Partecipante A.
+            Hai deciso di tenere <strong>{{ player.kept }}</strong> per te stesso. 
+            Quindi tu ottieni <strong>{{ player.payoff_if_A }}</strong>.
+            
+        {% else %}
+        
+         Sei stato selezionato casualmente dal computer come Partecipante B.
+            Il partecipante A ha deciso di tenere <strong>{{ player.keptbyother }}</strong>, quindi tu hai ottenuto:
+         <strong>{{ player.payoff_if_B }}</strong>.
+        {% endif %}
+
+        {% next_button %}
+    </p>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'dictator/Instructions.html' %}
+  </div>
+</div>
+
+{% endblock %}

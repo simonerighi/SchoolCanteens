@@ -1,0 +1,79 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Secondo Gioco  - Soluzione della domande di comprensione
+{% endblock %}
+
+{% block content %}
+
+  		<p> Hai a disposizione 100 gettoni, immagina di aver deciso di inviare 70 gettoni,
+  		 immagina che il computer ti abbia selezionato come Partecipante A. </p>
+
+
+    {% if player.question_A_correct %}
+        <p class="text-success">
+            La tua risposta <strong>alla domanda 'Quanti gettoni ottieni alla fine del gioco?'. E' {{player.question_A}}'</strong>
+            Questa risposta era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong> alla domanda 'Quanti gettoni ottieni alla fine del gioco?'. E' {{player.question_A}}'</strong>
+            Questa risposta era sbagliata.
+        </p>
+    {% endif %}
+    
+       <p>  <strong>  Spiegazione soluzione prima domanda:  </strong></p>
+       <p> Il computer ti ha selezionato come giocatore A. Quindi tu avevi a disposizione 100 gettoni inizialmente. Hai deciso di inviarne 70 al giocatore B. Quindi ne hai tenuti 100-70=30 per te. 
+       Tu ottieni i 30 gettoni che hai tenuto per te.</p>
+
+    
+    {% if player.question_B_correct %}
+        <p class="text-success">
+            La tua risposta <strong> alla domanda 'Quanti gettoni ottiene il giocatore B?  {{player.question_B}}'</strong>
+            era corretta.
+        </p>
+    {% else %}
+        <p class="text-danger">
+            La tua risposta <strong> alla domanda 'Quanti gettoni ottiene il giocatore B? {{player.question_B}}'</strong>
+            era sbagliata.
+        </p>
+    {% endif %}
+
+<p>
+
+      <p>   <strong> Spiegazione soluzione seconda domanda:  </strong>
+           </p> <p>Il giocatore B comincia il gioco con 0 gettoni. Tu hai deciso di inviargliene 70.
+           Quindi alla fine del gioco il giocatore B ottinene 70 gettoni. 
+           </p>
+    </p>
+    
+    
+    </br>
+</br>
+  </br>
+
+        
+        
+  
+           
+          
+           
+  <p>Hai completato le domande di comprensione, adesso possiamo iniziare il test vero e proprio che avrà effetto sul numero di biglietti del cinema che potrai vincere.         
+ </p>
+
+     
+     <p> Quando sei pronto per iniziare puoi cliccare sul bottone <strong>'Successivo'</strong> qui sotto.    </p>
+    {% next_button %}
+
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Clicca Per Rileggere le istruzioni
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+  	{% include 'dictator/Instructions.html' %}
+  </div>
+</div>
+
+{% endblock %}
