@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-02 21:06+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/bret/Decision.html:60
+msgid "Your Decision"
+msgstr "La tua decisione"
+
+#: templates/bret/Decision.html:125
+msgid "No. of boxes collected:"
+msgstr "Numero di scatole raccolte:"
+
+#: templates/bret/Decision.html:130
+msgid "No. of boxes remaining:"
+msgstr "Numero di scatole rimanenti:"
+
+#: templates/bret/Decision.html:136
+msgid "No. of boxes to collect:"
+msgstr "Numero di scatole da raccogliere:"
+
+#: templates/bret/Decision.html:161
+msgid "Start"
+msgstr "Parti"
+
+#: templates/bret/Decision.html:172
+msgid "Stop"
+msgstr "Fermati"
+
+#: templates/bret/Decision.html:184
+msgid "Solve"
+msgstr "Raccogli"
+
+#: templates/bret/Instructions.html:18
+msgid "Instructions"
+msgstr "Istruzioni"
+
+#: templates/bret/Instructions.html:29
+#, python-format
+msgid ""
+"In the following, you will see a %(num_rows)sx%(num_cols)s-matrix containing "
+"%(num_boxes)s boxes on your screen."
+msgstr "In questo gioco giochi da solo e puoi guadagnare gettoni aggiuntivi.<br/> Nella prossima pagina vedrai un quadrato formato da %(num_rows)sx%(num_cols)s= %(num_boxes)s scatole."
+
+#: templates/bret/Instructions.html:35
+#, python-format
+msgid ""
+"As soon as you start the task by hitting the 'Start' button, one of the "
+"boxes is collected per second, starting from the top-left corner. Once "
+"collected, the box marked by a tick symbol. For each box collected you earn "
+"%(box_value)s."
+msgstr "Devi decidere quante di queste scatole raccogliere. Ogni scatola, se raccolta, ti permette di guadagnare %(box_value)s. Una volta raccolta, la scatola è marcata con un segno di spunta. "
+
+
+#: templates/bret/Instructions.html:43
+#, python-format
+msgid ""
+"Behind one of the boxes hides a bomb that destroys everything that has been "
+"collected. The remaining %(num_nobomb)s boxes are worth %(box_value)s each. "
+"You do not know where the bomb is located. You only know that the bomb can "
+"be in any place with equal probability."
+msgstr "Dietro <strong>una</strong> delle scatole si nasconde una <strong>bomba</strong> che distrugge tutto ciò che è stato raccolto. Le rimanenti %(num_nobomb)s scatole valgono %(box_value)s gettoni ciascuna. Tu non sai dove la bomba è posizionata, sai solo che la bomba si può trovare <strong>dietro una qualsiasi delle scatole con eguale probabilità</strong>."
+
+#: templates/bret/Instructions.html:51
+msgid ""
+"Your task is to choose when to stop the collecting process. You do so by "
+"hitting 'Stop' at any time. If you collect the box where the bomb is "
+"located, the bomb will explode and you will earn zero. If you stop before "
+"collecting the bomb, you gain the amount accumulated that far."
+msgstr "Il tuo incarico è di scegliere il numero di scatole che vuoi raccogliere, scrivendolo nello spazio sotto il quadrato. Quando hai scritto il numero di scatole che vuoi raccogliere, clicca su 'Fermati', e poi sul pulsante 'Raccogli'. <br/>Se raccogli la scatola dove si trova la bomba, la bomba esploderà e tu guadagnerai zero gettoni da questo gioco. Se non raccogli la bomba guadagni il numero di gettoni corrispondente al numero di scatole scoperte."
+
+#: templates/bret/Instructions.html:58
+msgid ""
+"At the end of the task boxes are toggled by hitting the 'Solve' button. A "
+"dollar sign or a fire symbol (for the bomb) will be shown on each of your "
+"collected boxes."
+msgstr "Quando clicchi su 'Raccogli', un simbolo di dollaro apparirà su ogni scatola raccolta e senza bomba. Un simbolo di fuoco  apparirà invece sulla scatola che contiene la bomba  (se l'hai raccolta)."
+
+#: templates/bret/Results.html:18
+msgid "Results"
+msgstr "Risultati"
+
+#: templates/bret/Results.html:32
+#, python-format
+msgid "You chose to collect %(boxes_collected)s out of %(boxes_total)s boxes."
+msgstr "Hai scelto di raccogliere %(boxes_collected)s delle %(boxes_total)s scatole."
+
+#: templates/bret/Results.html:37
+#, python-format
+msgid ""
+"The bomb was hidden behind the box in row %(bomb_row)s, column %(bomb_col)s."
+msgstr "La bomba era nascosta dietro la scatola alla riga %(bomb_row)s, colonna %(bomb_col)s."
+
+#: templates/bret/Results.html:43
+#, python-format
+msgid ""
+"The bomb was among your %(boxes_collected)s collected boxes.<br/> "
+"Accordingly, all your earnings in this task were destroyed and your payoff "
+"amounts to %(payoff)s."
+msgstr "La bomba era tra le tue %(boxes_collected)s scatole raccolte. "
+"Di conseguenza, tutti i tuoi guadagni in questo gioco sono distrutti e tu guadagni %(payoff)s."
+
+#: templates/bret/Results.html:58
+#, python-format
+msgid ""
+"The table below summarizes the results of your decisions in the "
+"%(num_rounds)s rounds played."
+msgstr "La tabelle sotto riassume il risultato della tua decisione nei "
+"%(num_rounds)s turni giocati. "
+
+#: templates/bret/Results.html:71
+msgid "Round History"
+msgstr "Storia dei turni"
+
+#: templates/bret/Results.html:77
+msgid "Round No."
+msgstr "Turno numero"
+
+#: templates/bret/Results.html:78
+msgid "No. of Boxes Collected"
+msgstr "Numero di scatole raccolte"
+
+#: templates/bret/Results.html:79
+msgid "Bomb Collected"
+msgstr "Bomba raccolta"
+
+#: templates/bret/Results.html:80
+msgid "Round Payoff"
+msgstr "Gettoni vinti in questo turno"
+
+#: templates/bret/Results.html:88
+msgid "Yes"
+msgstr "Si"
+
+#: templates/bret/Results.html:90
+msgid "No"
+msgstr "No"
+
+#: templates/bret/Results.html:102
+#, python-format
+msgid ""
+"For your payment, round number %(round_to_pay)s was randomly chosen. <br/> "
+"Thus, your final payoff in this task amounts to <b>%(total_payoff)s</b>."
+msgstr "Il tuo pagamento, per il numero di round %(round_to_pay)s è stato scelto. <br/> "
+"Quindi, tu vinci <b>%(total_payoff)s</b>."
+
+#: templates/bret/Results.html:107
+#, python-format
+msgid ""
+"Your final payoff is determined by the sum of all payoffs per round such "
+"that you final payoff in this task amounts to <b>%(total_payoff)s</b>."
+msgstr "Il numero di gettoni che vinci è la somma dei gettoni guadagnati in ogni turno di gioco. "
+"Quindi vinci: <b>%(total_payoff)s</b>."
